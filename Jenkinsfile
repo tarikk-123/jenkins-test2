@@ -34,7 +34,7 @@ pipeline {
 
                     // App.java dosyasına yapılmış commit sayısını al
                     def AppflaskCommitCount = sh(
-                        script: "git rev-list --count HEAD -- App.java",
+                        script: "git rev-list --count HEAD -- app.py",
                         returnStdout: true
                     ).trim()
                     env.VERSION = "1.0.${AppflaskCommitCount}"
